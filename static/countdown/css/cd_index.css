@@ -1,0 +1,35 @@
+.row-wrapper {
+    background-color: white;
+    padding:20px;
+    /* margin-top: 20px; */
+}
+
+.img-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.txt-col {
+    padding:5px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-round-4 {
+    border-radius: 2%;
+    /* padding:5px 10px; */
+    margin: 10px;
+}
+
+.maintxt{
+    font-size: 1.2rem;
+}
+
+.span-link {
+    float: right; 
+    margin-top: 5%; 
+    padding-right: 20px;
+}
+
+
+  

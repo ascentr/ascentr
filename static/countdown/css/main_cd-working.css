@@ -1,0 +1,333 @@
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  }
+  
+body {
+  font-family: 'Cabin', sans-serif;  
+  color: black;
+  margin: 0px; padding:0px;
+  height: 100%;
+  font-size: 1.1rem;
+}
+
+@font-face {
+  font-family: myCalcFont;
+  src: url(calculator.ttf);
+}
+
+.navbar-row {
+	background-color: rgb(13, 183, 189); 
+}
+.black{
+	color: rgb(2, 19, 10)
+}
+.black:hover{
+	color: cornsilk;
+}
+
+.anim {
+  background: linear-gradient(-45deg, rgb(42, 156, 185), rgb(159, 90, 223), rgb(42, 156, 185), rgb(159, 90, 223) );
+  background-size: 400% 400%; 
+  animation: gradient 15s ease infinite;
+  height: 100%;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 50%;
+  }
+  50% {
+      background-position: 100% 50%;
+  }
+  100% {
+      background-position: 0% 50%;
+  }
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
+
+
+.col1 {        
+  color : white;     
+  background-color: #4d5c62;    
+}
+.col2 {
+  background-color:#c5d5c5;  
+}
+.col3 {
+  background-color: #b2c2bf;  
+}
+.col4 {
+  background-color: #9fa9a3;  
+}
+.col5 { 
+  color : white;     
+  background-color: #3b3a30;  
+}
+
+
+
+
+
+
+.p-txt {
+  color: azure;
+  text-align: justify;
+}
+.nav-ingame {
+  /* font-size: 0.6em; */
+  margin-top: 10px;
+  color: black;
+  text-decoration: underline;
+}
+
+.nav-ingame:hover {
+  color: rgb(240, 170, 90);
+}
+
+.white {
+  color: blanchedalmond;
+}
+
+.cntr {
+  text-align: center;
+}
+
+
+
+.game-heading-wrapper {
+  background-color: rgb(144, 76, 253); 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center; 
+  width: 100%; 
+  padding:10px
+}
+.game-heading{
+  font-size: 1.7rem;
+  letter-spacing: 0.2rem;
+  font-weight:  bold;
+}
+.star {
+  position: relative;
+  letter-spacing: 0.1em;
+  margin-top:10px;
+  margin-left: 30px;
+  color: gold;
+  text-decoration: underline;
+}
+
+.game-display-wrapper{
+  text-align: center; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  width: 100%; 
+  padding:10px
+}
+
+
+button {
+  background: rgb(39, 43, 172);
+  background: linear-gradient(90deg, rgb(83, 50, 241) 10%, rgb(115, 21, 238) 55%);
+  color: white;
+  border: solid 1px white;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  outline: none;
+
+}
+
+button:disabled {
+  background: rgb(131, 132, 145);
+  color: white;
+  border: solid 2px white;
+  /* width: 60px; */
+  height: 50px;
+  outline: none;
+  /* font-size: 0.8em; */
+}
+
+.btnControl {
+  background: rgb(39, 43, 172);
+  padding: 16 2 16 2px;
+  min-width: 75px;
+  width: auto;
+  height: 40px;
+  color: white;
+  border: #FFFFFF 1px solid;
+  margin: 2px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.btnControl2 {
+  /*    background:  rgba(153, 64, 162, 1);*/
+  background: #5f35a7;
+  padding: 16 2 16 2px;
+  width: auto;
+  min-width: 75px;
+  height: 40px;
+  color: white;
+  border: #FFFFFF 1px solid;
+  margin: 2px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.btnClass1 {
+  background: rgb(39, 43, 172);
+  background: linear-gradient(90deg, rgb(83, 50, 241) 10%, rgb(115, 21, 238) 55%);
+  color: white;
+  min-width: 50px;
+  width: auto;
+  height: 50px;
+  margin: 2px;
+  border: solid 1px white;
+  outline: none;
+  /* font-size: 1rem; */
+}
+
+.btnClass2 {
+  background: purple;
+  color: white;
+  min-width: 50px;
+  width: auto;
+  height: 50px;
+  margin: 2px;
+  border: solid 1px white;
+  outline: none;
+  /* font-size: 1rem; */
+}
+
+
+input[type=text] {
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  height: 50px;
+  /* width: 250px; */
+  margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 550px) {
+  input[type=text] {
+      padding: 5px;
+      border: 1px solid #000000;
+      height: 50px;
+      size: 9;
+      font-size: 1.2rem;
+      width: 80%;
+      border-radius: 4px;
+      margin-bottom: 3px;
+  }
+}
+
+.scores {
+  font-size:1.5rem;
+  color: bisque;
+  justify-content: center; 
+  white-space: nowrap;
+  width: 100%;
+}
+
+#time {
+  font-family: myCalcFont;
+  font-size: 25px; 
+  font-weight: bold;
+  color: white;
+  text-align: right;
+  height: 50px;
+}
+
+/* ---for the letters game---- */
+/* .meanings {
+  width: 60%;
+  background-color: yellowgreen;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+} */
+
+
+
+.brdr {
+  border: 1px solid;
+  width: 100%;
+}
+
+#finish {
+  color: white;
+  height: 80px;
+}
+
+#block{
+  font-size: 0.8em;
+  display: inline-block;
+ }
+
+#solution {
+  font-size: 1.3em;
+  margin: 10px 0px;
+}
+
+#message {
+  font-size: 1.2em;
+  /* width: 100%; */
+  height: auto;
+}
+
+
+
+
+.span4 img {
+  margin: 10px;
+}
+
+.span4 a{
+  font-size: 0.9em;
+}
+.span4 .img-left {
+  float: left;
+}
+.span4 .img-right {
+  float: right;
+}
+
+.pad-20 {
+	padding: 20px 20px 0px 20px;
+}
+
+.footer-class {
+	background-color: rgb(188, 207, 223); 
+	color: slategrey;
+	font-weight: lighter;
+  left: 0;
+	right: 0;
+  position: relative;
+  bottom: 0;
+}
+
+.nav-footer{
+	text-decoration: none;
+	color:slategrey;
+} 
+
+.mrgtb-5 {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.list-style {
+  margin-left:10%;
+  text-align: left;
+}

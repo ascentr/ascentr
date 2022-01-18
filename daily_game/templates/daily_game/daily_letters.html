@@ -1,0 +1,89 @@
+
+
+
+{% extends "base_cd.html" %}
+{% load static %}
+
+{% block header %}
+
+<link rel="stylesheet" href="{% static 'daily_game/css/daily.css' %}">
+
+<script src="{% static 'daily_game/js/commonFunctions.js' %}"></script>
+<script src="{% static 'daily_game/js/dailyChallange.js' %}"></script>
+
+<title>Daily Challenge -- Letters Game</title>
+{% endblock  %}
+
+{% block content %}
+
+
+
+<div style="min-height: 100vh;">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-heading-wrapper">
+            <div class="game-heading"> Letters Game Round </div> 
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-scores-wrapper">
+            <span style="float: left;"> Round Score : </span>  <span id="roundscore" style="float: right;"></span>
+            <span>Total Score:</span> <span id="totalscore"></span> 
+        </div>
+    </div>   
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-display-wrapper">
+
+            <div id="display" style="min-height:70px;"></div>
+            <div>
+                <span id="time">&nbsp;</span>
+            </div> 
+
+            <div id="display" class="mrgtb-5"></div>
+
+            <div id="input-letters">
+                <form name="myForm">
+                    <input type="text" id="input_answer" name="answer">
+                </form>
+            </div>
+
+            <div id="saved" style="height: 55px;"></div>
+            <div id="control">
+                <button onclick="makeButtons(letArray,9,gameType)" class="btnControl">Reveal Letters</button>
+            </div>
+
+            <div id="message"></div>
+            <div id="meaning"></div>
+
+            <div id="finish"></div>
+
+
+        </div>
+    </div>
+
+    {% for letter in context  %}
+        <script type="text/javascript">
+            let gameType = 1
+            let letScore = sessionStorage.getItem("letScore")
+            let totalScore = sessionStorage.getItem("totalScore")
+            if (sessionStorage.letScore) {    
+                document.getElementById("roundscore").innerHTML = letScore;
+                document.getElementById("totalscore").innerHTML = totalScore;
+                document.getElementById("control").innerHTML = "You have already played this round" + "<br/>" +
+                    '<button class="btnControl2" onclick="getUrl()" >Continue to Numbers Game &#10140;</button>'
+            }
+            else {
+                document.getElementById("input_answer").disabled = true;
+                myForm.input_answer.value = ""
+                var letString = '{{ letter.letters }}'
+                var letArray = letString.split("")
+                var numString = '{{letter.numbers}}'
+                var numArray = '{{ letter.numbers}}'
+            }
+        </script>
+    {% endfor %}
+
+</div>
+
+
+{% endblock  %}

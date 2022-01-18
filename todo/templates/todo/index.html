@@ -1,0 +1,107 @@
+{% extends "base.html"  %}
+
+
+
+{%  block header %}
+{% load static %}
+
+
+<!-- Fengyuan Chen's Datepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.css"
+  integrity="sha256-b88RdwbRJEzRx95nCuuva+hO5ExvXXnpX+78h8DjyOE=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js"
+  integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'todo/css/styles1.css' %}">
+
+  <title>Build a to do list, Ascentrick.com</title>
+
+{% endblock %}
+
+
+
+{% block content %}
+<div style="min-height:100vh;">
+
+	<div class="container t20">
+
+		<div class="row">
+			<div class="col-md-4">
+				<div class="" id="content">
+					{% if user.is_authenticated %}
+					<h3>&nbsp;</h3>
+					<form action="{% url 'todo:add' %}" method="POST" role="form">
+						{% csrf_token %}
+
+						{{ form.text }}
+						{{ form.lastdate }}
+						<div class="rgt">
+							<button type="submit" class="btn btn-success t10">
+								<i class="fas fa-plus"></i> ADD
+							</button>
+
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="col-md-8">
+
+				<div class="" id="content">
+					<h3>{{ user }}'s Task List </h3>
+
+					{% for item in todo_list %}
+					{% if user == item.owner %}
+					<ul class="list-group t10">
+						{% if item.complete %}
+						<li class="list-group-item list-group-item-success todo-completed">{{ item.text }}
+							{{ item.lastdate }}
+						</li>
+						{% else %}
+						<li class="list-group-item list-group-item-default">
+							<a href="{% url 'todo:complete' item.id %}">{{ item.text }} </a>
+							<div class="lastdate">{{ item.lastdate }} </div>
+						</li>
+						{% endif %}
+					</ul>
+					{% endif %}
+					{% endfor %}
+				</div>
+				<div>
+					<div class="btn-group">
+						<a href="{% url 'todo:deletecomplete' %}">
+							<button type="button" class="btn btn-warning t10">
+								<i class="fas fa-trash-alt"></i> DELETE COMPLETED
+							</button>
+						</a>
+					</div>
+					<div class="btn-group">
+						<a href="{% url 'todo:deleteall' %}">
+							<button type="button" class="btn btn-warning t10">
+								<i class="fas fa-trash-alt"></i> DELETE ALL
+							</button>
+						</a>
+					</div>
+				</div>
+
+
+				</div>
+			</div>
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+
+<script>
+	$(function () {
+		$("#id_lastdate").datepicker({
+			format: 'yyyy-mm-dd',
+		});
+	});
+</script>
+
+
+{% endblock %}

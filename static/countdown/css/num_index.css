@@ -1,0 +1,123 @@
+
+#display,
+#display2 {
+    min-height: 60px;
+}
+
+.result {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: whitesmoke;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center; 
+    margin-top:10px; 
+    margin-bottom:10px;
+}
+
+#method {
+    height: 100px;
+}
+
+
+#finished {
+    color: white;
+    font-size: 1em;
+    height: 80px;
+}
+
+#solution, message {
+    font-size: 1rem;
+    height: 80px;
+}
+
+.grid-container {
+    display:inline-grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 2px;
+    row-gap: 2px;
+}
+
+.grid-container > div {
+    text-align: center;
+    padding: 2px ;
+    font-size: 25px;
+}
+
+.grid-item-full {
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+.grid-item-x2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.operator {
+    background-color: #303030;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    outline: none;
+    border: solid 1px white;
+    align-items: center;
+    line-height: 60px;
+  }
+  
+  .operator2 {
+    background-color: #303030;
+    color: white;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 125px;
+    height: 60px;
+    outline: none;
+    border: solid 1px white;
+    line-height: 60px;
+  }
+  
+  .calculator {
+    box-sizing: border-box;
+    border-radius: 4px;
+    text-align: center;
+    max-width: 274px;
+  }
+  
+  .calculator-body {
+    background-color:rgb(85, 162, 172);
+    /* width: 300px; */
+    /* background-color: wheat; */
+    border: #f4adf7 2px solid;
+    border-radius: 4px;
+    padding: 10px;
+  
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .play-screen{
+    border: 2px solid black;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .calculator-display {
+    outline: none;
+    font-family: myCalcFont;
+    /* font-size: 1em; */
+    text-align: right;
+    padding-right: 3px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: slategrey 1px solid;
+
+  }
+  
+
+  

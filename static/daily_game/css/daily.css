@@ -1,0 +1,46 @@
+.maintxt{
+    font-size: 1.2rem;
+    text-align: justify;
+}  
+
+
+.game-scores-wrapper {
+    /* background-color: rgb(128, 127, 129);  */
+    display: flex; 
+    flex-direction: row; 
+    font-size: 0.8rem;
+    color: yellow;
+    justify-content: space-evenly;
+    width: 100%; 
+    padding:2px
+  }
+
+  .input-answer {
+    outline: none;
+    font-family: myCalcFont;
+
+    font-size: 1.2em;
+    text-align: right;
+    padding-right: 3px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: slategrey 1px solid;
+  }
+
+  .daily-index-wrapper{
+    display: flex; flex-direction: row; justify-content: space-around;
+    }
+.daily-index-content{
+    background-color: rgb(172, 221, 247); max-width: 33%; margin:5px; padding:5px; border-radius:4px;
+}
+
+@media (max-width: 750px) {
+    .daily-index-wrapper{
+        margin-left:10px;
+        display: flex; flex-direction: column; justify-content: start;
+    }
+    .daily-index-content{
+        background-color: rgb(172, 221, 247); max-width: 100%; margin:5px; padding:5px; border-radius:4px; 
+    }
+
+}

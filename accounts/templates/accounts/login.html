@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load socialaccount %}
+{% load bootstrap4 %}
+
+{% block content %}
+
+
+<div style="min-height:100vh;">
+
+  <div class="row justify-content-center t20">
+    <h2>Login</h2>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-6 pad-20">
+      <div class="jumbotron">
+
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ user.username }} !</p>
+        {% else %}
+
+        <form method="POST">
+          {% csrf_token %}
+
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+          </div>
+
+          {% if form.errors %}
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            Error loging in ! Please check login details and try again.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          {% endif  %}
+  
+          {%  if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}" />
+          {% endif %}
+
+          <div> 
+            <input type="submit" class='btn btn-primary' value="Login" style="margin-right: 15px;">
+            <a href="{% provider_login_url 'google' %}"  class = "btn btn-primary">
+              <i class="fa fa-google" aria-hidden="true"></i>Login with Google
+            </a>        
+          </div>
+        </form>
+
+        {% endif %}
+        <p><br/>
+          Forgotten Password ? <a href="{% url 'password_reset' %}">Reset Here.</a> 
+          Not Registered <a href="{% url 'accounts:signup' %}">Signup Here</a>
+        </p>
+      </div> <!-- JUMBOTRON CLOSE -->
+    </div>
+  </div>
+
+</div> <!--LAST DIV BEFORE FOOTER -->
+
+{% endblock %}

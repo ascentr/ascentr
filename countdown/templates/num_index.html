@@ -1,0 +1,80 @@
+{% extends 'base_cd.html' %}
+{% load bootstrap4 %}
+
+{%  block header %}
+{% load static %}
+
+  <link rel="stylesheet" href="{% static 'countdown/css/num_index.css' %}">
+
+  <title>Count down umbers Game by Ascentrick.com</title>
+{% endblock %}
+
+
+{% block content %}
+<div style="min-height: 100vh;">
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3 game-heading-wrapper">
+        <div class="game-heading"> Numbers Game </div> 
+        <div class="fa fa-star star" id="bscore"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 result" id="result">
+      <button class="btnControl" onclick="getLargeNum()">Large Number</button>
+      <button class="btnControl" onclick="getSmallNum()">Small Number</button>
+      <button class="btnControl" onclick="randomMaths()">Go</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3"
+          style="display:flex; flex-direction:column;">
+      <div id="display"  style="text-align: center;" ></div>
+      <div id="display2" style="text-align: center;"></div>      
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3" style="display: flex; flex-direction: row; justify-content: center;">
+      <div class="calculator">
+        <div class="calculator-body">
+          <div id="time">TIME</div>
+            <form name="calcy">
+              <div class="grid-container">
+                <div class="grid-item-full"> 
+                  <input type="text" class="calculator-display" name="answer" id="calculator-display" >    
+                </div>
+                <div class="item operator" onclick="calcy.answer.value += '+' ">+</div>
+                <div class="item operator" onclick="calcy.answer.value += '-' ">-</div>  
+                <div class="item operator" onclick="calcy.answer.value += '*' ">X</div>
+                <div class="item operator" onclick="calcy.answer.value += '/' ">/</div>
+                <div class="item operator" onclick="calcy.answer.value += '(' ">(</div>
+                <div class="item operator" onclick="calcy.answer.value += ')' ">)</div>
+                <div class="grid-item-x2 operator2" onclick="evalAnswer()"     >=</div>
+                <div class="item operator" id="backspace" onclick="backSpace();">DEL</div>
+                <div class="item operator" id="clearButton" onclick=" enableDigits();">C</div> 
+                <div class="grid-item-x2 operator2" onclick="makeBtn() ">SAVE</div>  
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3 game-display-wrapper">
+      <div id="message"></div>
+      <div id="score" class="scores"> </div>
+      <div id="finish"></div>
+      <div id="solution"></div> 
+    </div>    
+  </div>
+
+
+
+</div>
+
+
+{% endblock %}
+
+{% block js %}
+  <script src="{% static 'countdown/js/nums_index.js' %}"></script>
+{% endblock %}

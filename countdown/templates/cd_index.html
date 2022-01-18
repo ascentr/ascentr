@@ -1,0 +1,103 @@
+{% extends 'base_cd.html' %}
+{% load bootstrap4 %}
+
+{%  block header %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'countdown/css/cd_index.css' %}">
+
+<title>Play Countdown Home Page</title>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div>
+
+  <div class="row row-wrapper">
+    <div class="col-md-6 offset-md-3 justify-content-center" >
+      <h1> COUNTDOWN </h1> 
+      <p class="maintxt">
+            The Count Down game is the online version of the famous TV quiz game broadcast on Channel 4 in
+            the UK. You can choose to play the Word Game, Numbers Game or the solve the anagram Conundrum.
+            You are allowed 35 seconds the extra 5 seconds are needed for plying the on the screen.                
+      </p>
+    </div>
+  </div>
+
+  <div class="row row-wrapper">
+
+    <div class="col-md-3 offset-md-3 img-col">
+      <img src="{%  static 'images/countdown/wrd.png' %}" alt="letters game screenshot" class="img-round-4" />
+    </div>
+    <div class="col-md-3 txt-col" >
+      <h2>
+        <a href="{% url 'countdown:letters' %}">Word Game</a> 
+      </h2> 
+      <p>
+        Choose 9 letters as vowels or consonants and make the longest word you can. You can not use any
+        letter more than once. Points are scored based on the length of the word that is found in the
+        dictionary.<br>
+        <span class="span-link">
+          <a href="{% url 'countdown:letters' %}">
+            <button class="btnControl2">Click Here to Play</button>
+          </a>
+        </span>
+      </p>
+    </div>
+
+
+  </div>
+
+  <div class="row row-wrapper">
+    <div class="col-md-3 offset-md-3 img-col">
+      <img src="{% static 'images/countdown/num.png' %}" alt="numbers game screenshot" class="img-round-4">
+    </div>
+    <div class="col-md-3 txt-col">
+      <h2>
+        <a href="{% url 'countdown:numbers' %}">Numbers Game</a> 
+      </h2>
+      <p>
+        You choose 6 large & small numbers and the game generates a target answer. You can then use the
+        in-game calculator to try and get the answer. 10 Points are given for the correct answer and the
+        time left is added to give bonus points.
+        You are only allowed to choose a maximum of 4 large numbers from (25, 50, 75, 100).  
+        <br>
+        <span class="span-link">
+          <a href="{% url 'countdown:numbers' %}">
+            <button class="btnControl2">Click Here to Play</button>           
+          </a>
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="row row-wrapper">
+    <div class="col-md-3 offset-md-3 img-col">
+      <img src="{% static 'images/countdown/cnd.png' %}" alt="Conundrum game screenshot" class="img-round-4">
+    </div>
+    <div class="col-md-3 txt-col">
+      <h2>
+        <a href="{% url 'countdown:conundrum' %}"> The Conundrum </a>
+      </h2>
+      <p>
+        The conundrum is a 9 letter anagram that has been shuffled by the game. You get 10 points for
+        solving the conundrum and time left is added as a bonus.
+        <br>
+        <span class="span-link">
+          <a href="{% url 'countdown:conundrum' %}">
+            <button class="btnControl2">Click Here to Play</button>
+          </a>
+        </span>
+      </p>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

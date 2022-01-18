@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" initial-scale=1.0>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap 4 and jQuery  -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!--font awesome for icons etc-->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!--Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Francois+One|Kanit|Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Cabin|Cantarell|Cuprum|Noto+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+  {% block header %}
+
+  <title>Freelance, Fullstack Web Development by Ascentrick.com</title>
+  <link rel="shortcut icon" type="image/jpg" href="{% static 'images/favicon.ico' %}"/>
+
+  {% endblock %}
+  <link rel = "stylesheet" href ="{% static 'css/bootstrap-social.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <style>
+    .contact-icon{
+      border: 1px solid orange; border-radius:4px; 
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="row navbar-row justify-content-md-center" >
+
+    <div class="col col-lg-10">
+      <nav class="navbar navbar-expand-md justify-content-right right-0">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <img src="{% static 'images/ascentrick-logo-sml.png' %}" alt="ascentrick logo">
+        </a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#mycollapse">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mycollapse">
+          <div class="navbar-nav align-items-right">
+            <a class="nav-item nav-link black" href="{% url 'about' %}">About</a>
+            <a class="nav-item nav-link black" href="{% url 'portfolio' %}">Portfolio</a>
+            <a class="nav-item nav-link black" href="{% url 'services' %}">Services</a>
+            <a class="nav-item nav-link black" href="{% url 'contacts:contacts' %}">Contact</a>
+          </div>
+          <div class="navbar-nav align-items-right ml-auto">
+            <a class="nav-item nav-link black" href="tel:+447940786988" aria-label="Logout">
+              <i class="fas fa-phone"></i> +44 7940786988
+            </a>
+
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link black" href="{% url 'logout' %}" aria-label="Logout"><i
+                class="fas fa-sign-out-alt"></i>Logout</a>
+            {% else %}
+
+            <a class="nav-item nav-link black" href="{% url 'login' %}" aria-label="Login"><i
+                class="fas fa-sign-in-alt"></i> Login</a>
+
+            <a class="nav-item nav-link black" href="{% url 'accounts:signup' %}" aria-label="Signup"><i
+                class="fas fa-user"></i> Signup </a>
+
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+
+  <div class="container-fluid" style="width: 100%; padding-right:0;">
+    {% block content %}
+
+
+    {% endblock %}
+  </div>
+
+  <div class="row footer-fix">
+
+    <footer class="footer-class pad-20">
+      <div class="row">
+        <div class="col-lg-2   col-md-3 col-sm-4   offset-lg-1">
+          <h6><u><strong>Contacts</strong></u></h6>
+          <ul>
+            <li><a href="{% url 'index' %}" class="nav-footer">www.ascentrick.com</a></li>
+            <li><a href="mailto:ascentrick@gmail.com?Subject=Hello" class="nav-footer" target="_blank">hi@ascentrick.com</a></li>
+            <li><a href="tel:+44 7940786988" class="nav-footer">+44 7940786988</a> </li>
+            <li><a href="https://www.linkedin.com/in/a-saleem-68315b1a2/" class="nav-footer"><img
+                  src="{% static 'images/in.png' %}" alt="linkedin Logo"></a> &nbsp;
+              <a href="facebook.com" class="nav-footer" alt="fb Logo"><img src="{% static 'images/fb.png' %}" alt="ascentrick logo">
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-2 col-sm-4">
+          <h6><u><strong>Main</strong></u></h6>
+          <ul>
+            <li><a href="{% url 'index' %}" class="nav-footer">Home</a></li>
+            <li><a href="{% url 'about' %}" class="nav-footer">About</a> </li>
+            <li><a href="{% url 'services' %}" class="nav-footer">Services</a></li>
+            <li><a href="{% url 'portfolio' %}" class="nav-footer">Portfolio</a></li>
+            <li><a href="{% url 'contacts:contacts' %}" class="nav-footer">Contact</a></li>
+            <li><a href="{% url 'login' %}" class="nav-footer">Login</a></li>
+            <li><a href="{% url 'accounts:signup' %}" class="nav-footer">signup</a></li>
+            <li><a href="{% url 'terms' %}" class="nav-footer"> Terms & Privicy Policy</a></li>
+        </div>
+
+        <div class="col-md-3 col-sm-4">
+          <h6><u><strong>Services</strong></u></h6>
+          <ul>
+            <li><a href="{% url 'services' %}#responsive" class="nav-footer">Responsive Web Design</a></li>
+            <li><a href="{% url 'services' %}#webdev" class="nav-footer">Web Development</a> </li>
+            <li><a href="{% url 'services' %}#mobil" class="nav-footer">Smart Phone Apps</a></li>
+            <li><a href="{% url 'services' %}#research" class="nav-footer">Research & Strategy</a></li>
+            <li><a href="{% url 'services' %}#branding" class="nav-footer">Graphic Design</a></li>
+            <li><a href="{% url 'services' %}#branding" class="nav-footer">Branding</a></li>
+            <li><a href="{% url 'services' %}#ecom" class="nav-footer">eCommerce</a></li>
+        </div>
+
+
+        <div class="col-md-3 col-sm-4">
+          <h6><u><strong>Apps</strong></u></h6>
+          <ul>
+            <li><a href="{% url 'todo:index' %}" class="nav-footer">Create To Do List</a></li>
+            <li><a href="{% url 'countdown:home' %}" class="nav-footer">Play Countdown</a></li>
+            <li><a href="{% url 'countdown:letters' %}" class="nav-footer">Words game</a></li>
+            <li><a href="{% url 'countdown:numbers' %}" class="nav-footer">Numbers game</a></li>
+            <li><a href="{% url 'countdown:conundrum' %}" class="nav-footer">Conundrum game</a></li>
+            <li><a href="{% url 'daily_game:index' %}" class="nav-footer">Daily Challange</a></li>
+          </ul>
+        </div>
+
+        <!-- closes row div in footer-->
+      </div>
+    </footer>
+  </div>
+
+
+  {% block js %}
+
+  {% endblock %}
+
+
+
+</body>
+
+</html>

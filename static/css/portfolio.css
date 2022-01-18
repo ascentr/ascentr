@@ -1,0 +1,26 @@
+.span4 img {
+    margin: 10px;
+  }
+  
+  .span4 a{
+    font-size: 0.9em;
+  }
+  .span4 .img-left {
+    float: left;
+  }
+  .span4 .img-right {
+    float: right;
+  }
+
+  .xtra {
+
+    background-color: steelblue;
+  }
+ 
+.port-maintxt{
+  font-size: 1em;
+  margin-left: 5px;
+  text-align: justify;
+}
+
+ 

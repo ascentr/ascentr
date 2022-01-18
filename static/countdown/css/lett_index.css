@@ -1,0 +1,17 @@
+
+ .word {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+
+
+ .wrdClass {
+   color: white;
+   border: solid 1px white;
+   width: auto;
+   height: 60px;
+   outline: none;
+   font-size: 0.70em;
+ }
+

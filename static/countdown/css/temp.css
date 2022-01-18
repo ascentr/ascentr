@@ -1,0 +1,70 @@
+input[type=text] {
+    padding: 10px;
+    border: 1px solid #000000;
+    height: 50px;
+    size: 35px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+  }
+ 
+  @media screen and (max-width: 550px) {
+    input[type=text] {
+      padding: 5px;
+      border: 1px solid #000000;
+      height: 50px;
+      size: 9;
+      font-size: 1.2rem;
+      width: 80%;
+      border-radius: 4px;
+      margin-bottom: 3px;
+    }
+  }
+ 
+  #display {
+    height: auto;
+    min-height: 60px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* font-size: 1.2rem; */
+    outline: none;
+    border: none;
+  }
+ 
+  .word {
+   text-transform: capitalize;
+   font-weight: bold;
+ }
+ 
+ .btm {
+   margin-bottom: 30px;
+ }
+ 
+  .wrdClass {
+    color: white;
+    border: solid 1px white;
+    width: auto;
+    height: 60px;
+    outline: none;
+    font-size: 0.70em;
+  }
+ 
+ 
+  /* #finish{
+   font-size: 0.6;
+   display: inline-block;
+ } */
+ 
+ ==================for cd_index.html========
+ {% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{%  block header %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'countdown/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'countdown/css/cnd_index.css' %}">
+
+<title>The Conundrum</title>
+
+{% endblock %}
+

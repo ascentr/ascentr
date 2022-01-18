@@ -1,0 +1,77 @@
+{% extends "base_cd.html" %}
+{% load static %}
+
+{% block header %}
+
+<link rel="stylesheet" href="{% static 'daily_game/css/daily.css' %}">
+<script src="{% static 'daily_game/js/commonFunctions.js' %}"></script>
+<script src="{% static 'daily_game/js/dailyChallange.js' %}"></script>
+
+<title>Daily Challange - The Conundrum </title>
+{% endblock  %}
+
+{% block content %}
+
+
+<div style="min-height: 100vh;">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-heading-wrapper">
+            <div class="game-heading"> Conundrum Round </div> 
+        </div>
+    </div> 
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-scores-wrapper">
+            <span style="float: left;"> Round Score : </span> <span id="roundscore"></span>
+            <span style="float: right;">Total Score:</span> <span id="totalscore"></span> 
+        </div>
+    </div>   
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-display-wrapper">
+            <div>
+                <span id="time">&nbsp;</span>
+            </div> 
+
+            <div id="display"></div>
+
+            <div id="input-letters" style="margin-top: 10px; margin-bottom: 15px;">
+                <form action="" name="myForm">
+                    <input type="text" id="input_answer" name="answer" />
+                </form>
+            </div>
+            <div id="display"></div>
+            <div id="saved"></div>
+            <div id="control" style="text-justify: center;">
+                <button onclick="makeButtons(cndWord,9,3)" class="btnControl">Reveal Letters</button>
+            </div>
+            <div id="message"></div>
+            <div id="message2"></div>
+            <div id="meaning" class="meaning"></div>
+            <div id="finish"></div>        
+        </div>
+    </div>
+
+    {% for letter in context  %}
+        <script type="text/javascript">
+            let gameType = 3
+            let totalScore = Number(sessionStorage.getItem("totalScore"))
+            document.getElementById("totalscore").innerHTML = totalScore
+            
+            if (sessionStorage.conScore) {
+                document.getElementById("roundscore").innerHTML = Number(sessionStorage.getItem("conScore"))
+                document.getElementById("control").innerHTML = ''
+                document.getElementById("message").innerHTML = "You have already played this round" +
+                    "<br/>" +
+                    '<button class="btnControl2" onclick="getUrl()" >Review and Submit Results &#10140;</button>'
+            } else {
+                document.getElementById("input_answer").disabled = true;
+                myForm.input_answer.value = ""
+                var cndWord = '{{letter.conundrum}}'
+            }
+        </script>
+    {% endfor %}
+
+</div>
+
+{% endblock  %}

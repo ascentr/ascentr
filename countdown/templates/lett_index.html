@@ -1,0 +1,62 @@
+{% extends 'base_cd.html' %}
+{% load bootstrap4 %}
+
+{%  block header %}
+{% load static %}
+
+<title>Countdown Letters Game</title>
+
+{% endblock %}
+
+
+{% block content %}
+<div style="min-height: 100vh;">
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-heading-wrapper">
+            <div class="game-heading"> Letters Game </div> 
+            <div class="fa fa-star star" id="bscore"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-display-wrapper">
+
+            <div id="display" style="min-height:70px;"></div>
+            <div>
+                <span id="time">&nbsp;</span>
+            </div>            
+            <div>
+                <form name="myForm">
+                    <input type="text" id="input_answer" name="answer">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-display-wrapper"">
+            <div id="control">
+                <button class="btnControl" onclick="getLetter(consonant)">Consonant</button>
+                <button class="btnControl" onclick="getLetter(vowel)">Vowels</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 game-display-wrapper">
+            <div id="saved"> </div>
+            <div id="score" class="scores"></div>
+            <div class="meanings"> 
+                <div id="message"></div>
+            </div>
+            <div id="finish"></div>
+        </div>
+    </div> 
+
+</div>        
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'countdown/js/lett_index.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row justify-content-center t20">
+
+  <picture>
+    <source media="(min-width: 650px)" srcset="{% static 'images/hmpg2.png' %}">
+    <source media="(min-width: 485px)" srcset="{% static 'images/hmpg2sml.png' %}">
+    <img src="{% static "images/hmpg2sml.png" %}" alt="Homepage main image" class="imgresponsive">
+  </picture>
+
+</div>
+
+<div class=" row justify-content-center hmpgtxt">
+  <b>OneMan Orchestra </b>
+</div>
+
+
+
+<div class="col col-md-8 offset-md-2">
+  <div class="hmpgtxt2" style="margin-top: 10px;"><span> Hi, am I web developer / designer based in Leeds and I provide freelance services in all
+      things digital including but not limited to: </span> <br>
+    <span style="font-family: Cabin,sans-serif; letter-spacing: 0.05em; font-weight: bold; color: slategrey;">Responsive
+      Web design - Web Development - eCommerce - Smartphone Apps - Branding and Print Design </span>
+  </div>
+</div>
+
+<div class="row justify-content-center" style="margin:0px 5px 25px 0px;">
+  <div >
+   <a href="{% url 'contacts:contacts' %}"><button class="call-to-act">Start Project </button></a>
+   <!-- <a href="{% url 'contacts:contacts' %}"><button class="call-to-act"><i class="fas fa-phone-square"></i> CALL </button></a> -->
+   <!-- <a href="tel:44 7940786988"> <button class="call-to-act"  value="">  <span>&#xf2b5;</span> CALL </button>   </a>     -->
+     
+   <a href="tel:44 7940786988"><button type="button" class="call-to-act2"><i class="glyphicon glyphicon-earphone" style="font-size:larger"></i>CALL</button>
+   </a>
+ 
+ 
+   </div>
+ </div> 
+<div class="jumbotron">
+
+
+  <div class="row justify-content-center pad-20">
+
+    <div class="col-lg-2 col-md-4 items-new"> 
+      <a href="{% url 'services'  %}#responsive " class="nav-plain">
+        <strong>Responsive Web Design</strong> <br> 
+        I deliver Pixel perfect design that works across all devices and display sizes. Clean crisp coded functionality behind 
+        the scenes ensures flawless functionality and reobust performance.    
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 items-new">
+      <a href="{% url 'services' %}#webdev" class="nav-plain">
+      <strong>Web Development </strong><br>
+      I can use a variety of open-source tools such as Python, Django, PostgreSQL etc to build customised architecture that ensures performance and reliability.  
+      I also work with Wordpress CMS.
+    </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 items-new clr">
+      <a href="{% url 'services' %}#branding" class="nav-plain">
+        <strong>Branding and Graphic Design</strong> <br>
+        A picture says a thousand words goes the old cliche.  I am here to help you make sure that your logo and graphics say the right thousand words (or a few thousand).  
+      </a>
+    </div>
+
+    <div class="col-lg-2 col-md-4 items-new"> 
+      <a href="{% url 'services'  %}#mobil" class="nav-plain">
+        <strong>Mobile Apps</strong><br>
+        The cell phone market is shared between Android and iPhone almost entirely.  I develop hybrid apps using platforms that allow publishing on 
+        both networks at a much lower cost than building in native code.    
+      </a>
+    </div>
+
+  </div>
+
+<!-- Personal Projects Start Here-->
+  <div class="row justify-content-center pad-20">
+    <div class="col-md-8">
+      <div  style="text-align: center;">
+        <h3 style="margin-top: 50px;">Check Out Some Recent Fun Projects</h3>
+      </div>  
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+
+    <div class="card mb-4" style="max-width: 600px; margin:10px; padding:10px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{% static 'images/home-clock.png' %}" class="card-img" alt="..." style="margin-top: 5px;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Play Countdwon</h5>
+            <p class="card-text">Test your wits in online version of a classic TV show. Make words from choice of letters, find the computer
+              generated 3 digit number and solve the anagram conundrum.</p>
+            <span style="float: right;" > <a href="{% url 'countdown:home' %}" class="btn btn-primary">Play Now</a>  </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-4" style="max-width: 600px; margin:10px; padding:10px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{% static 'images/home-todo.png' %}" class="card-img" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Create A Todo List</h5>
+            <p class="card-text">Create a personal task list to track your to do chores and deadlines. A Versatile todo list app Online. Try a demo with :  <br>
+            username: demo, &nbsp; &nbsp; password: temppass098 </p>
+            <span style="float: right;" > <a href="{% url 'todo:index' %}" class="btn btn-primary">Try Now</a>  </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div> <!--jumbotron finish-->
+
+
+
+{% endblock %}
+
+
+

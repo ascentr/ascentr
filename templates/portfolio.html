@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block header %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/portfolio.css' %}">
+<link rel="stylesheet" href="{% static 'css/port_style.css' %}">
+<title>Portfolio</title>
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+
+    <div class="row justify-content-center  t20">
+        <h1>Portfolio</h1>
+    </div>
+
+    <div class="row justify-content-center">
+        <h3> <u> Some Recent Projects </u></h3>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row justify-content-center">
+
+            <div class="col-md-2 " style="min-width: 230px; margin:0px 5px 5px 0px;  ">
+                <div class="row justify-content-center">
+                    <h4>Home Design</h4>
+                </div>
+                <div class="row justify-content-center ">
+                    <a href="http://homedesignupholstery.co.uk/" target="_blank">
+                        <img src="{%  static 'images/portfolio/port-hdu.png' %}" /></a>
+                </div>
+            </div>
+            <div class="col-md-2 " style="min-width: 230px; margin:0px 5px 5px 0px;  ">
+                <div class="row justify-content-center">
+                    <h4>Play Countdown</h4>
+                </div>
+                <div class="row justify-content-center ">
+                    <a href="{% url 'countdown:home' %}">
+                        <img src="{%  static 'images/portfolio/port-clock1.png' %}" /></a>
+                </div>
+            </div>
+            <div class="col-md-2" style="min-width: 230px; margin:0px 5px 5px 0px;">
+                <div class="row justify-content-center">
+                    <h4>Wordup Dictionary</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <a href="https://wordup-dict.netlify.app/" target="_blank">
+                        <img class="img-left" src="{%  static 'images/portfolio/port-wu.png' %}" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-2" style="min-width: 230px; margin:0px 5px 5px 0px; ">
+                <div class="row justify-content-center">
+                    <h4>Todo List</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <a href="{% url 'todo:index' %}">
+                        <img class="img-left" src="{%  static 'images/portfolio/port-todo.png' %}" />
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row justify-content-center t20">
+        <h3> <u> School Science Dictionaries on Play Store </u></h3>
+    </div>
+    <div class="jumbotron">
+        <div class="row justify-content-center">
+
+            <div class="col-md-2" style="min-width: 230px; margin:0px 5px 5px 0px; ">
+                <div class="row justify-content-center">
+                    <h4>GCSE Biology</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.biology.ascentrick" target="_blank">
+                        <img class="img-left" src="{%  static 'images/portfolio/appBio2.png' %}" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-2 " style="min-width: 230px; margin:0px 5px 5px 0px;  ">
+                <div class="row justify-content-center">
+                    <h5>GCSE Chemistery</h5>
+                </div>
+                <div class="row justify-content-center ">
+                    <a href="https://play.google.com/store/apps/details?id=com.chemistry.ascentrick" target="_blank">
+                        <img src="{%  static 'images/portfolio/appChem2.png' %}" />
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-2" style="min-width: 230px; margin:0px 5px 5px 0px;">
+                <div class="row justify-content-center">
+                    <h4>GCSE Physics</h4>
+                </div>
+                <div class="row justify-content-center">
+                    <a href="https://play.google.com/store/apps/details?id=com.physics.ascentrick" target="_blank">
+                        <img src="{%  static 'images/portfolio/appPhy2.png' %}" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- close jumbotron-->
+
+
+
+    <div class="row justify-content-center t20">
+        <h3> <u> Previous Works </u></h3>
+    </div>
+
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col justify-content-center">
+                <ul class="works">
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_dt.jpg' %}" width="240" height="170"
+                                alt="DomainTajir.com" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/dt/index.html" target="_blank">
+                            <div class="hide">
+                                <strong>Domaintajir.com</strong><br />-Market Research<br />-Concept Design<br />-Brand Identity
+                                <br />-Website Design <br />-Web Development<br />-E-Commerce<br />-W3C Compliance
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_fm.jpg' %}" width="240" height="170"
+                                alt="Fastmunch.com the best thing since fasat food" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/fm/index.html" target="_blank">
+                            <div class="hide"><strong>Fastmunch.com</strong><br />-Market Research<br />-Business Modeling
+                                <br />-Concept Design<br />-Brand Identity <br />-Flash Design <br />-Website Design
+                                <br />-Web Development
+                            </div>
+                        </a>
+                    </li>
+                            <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_cb.jpg' %}"" width=" 240" height="170"
+                                alt="Fastmunch.com the best thing since fasat food" /></div>
+                            <a href="https://old-sites.netlify.app/portfolio/claims/index.html" target="_blank">
+                            <div class="hide"><strong>Leeds Claims Bureau</strong>
+                                <br />-Flash Design
+                                <br />-Website Design <br />-Web Development<br />-Client Management
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_rp.jpg' %}"" width=" 240" height="170"
+                                alt="Rapeedo Pizza" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/rapeedo/index.html" target="_blank">
+                            <div class="hide"><strong>Rapeedopizza</strong><br />
+                                -Menu & Graphic Design <br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_tu.jpg' %}"" width=" 240" height="170" />
+                        </div>
+                        <a href="https://old-sites.netlify.app/portfolio/turners/index.html" target="_blank">
+                            <div class="hide"><strong>Turners Food & Wine</strong><br />
+                                -Banner & Graphic Design <br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_sk.jpg' %}"" width=" 240" height="170"
+                                alt="SK Fashions" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/sk/index.html" target="_blank">
+                            <div class="hide"><strong>SK Fashions</strong><br />
+                                -Business Identity <br />
+                                -Logo & Graphic Design <br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -E-Commerce <br />
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_rc.jpg' %}"" /></div>  
+                        <a href=" https://old-sites.netlify.app/portfolio/roseville/index.html" target="_blank">
+                            <div class="hide"><strong>Roseville Carpets</strong><br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                            </a>
+                    </li>
+                    <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_ss.jpg' %}"" alt=" Swahili Spirit" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/ss/index.html" target="_blank">
+                            <div class="hide"><strong>Swahili Spirit</strong><br />
+                                -Technical & Business &nbsp;Consultation <br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                        </a>
+                    </li>
+                            <li>
+                        <div class="show"><img src="{%  static 'images/portfolio/por_ff.jpg' %}"" width=" 240" height="170"
+                                alt="SK Fashions" /></div>
+                        <a href="https://old-sites.netlify.app/portfolio/fightingfit/index.html" target="_blank">
+                            <div class="hide"><strong>Fighting Fit Gym</strong><br />
+                                -Digital Photography <br />
+                                -Flash Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" title="Lensview Gallery Design" class="show"><img
+                                src="{%  static 'images/portfolio/por_ed.jpg' %}"" alt=" Swahili Spirit" width="240"
+                                height="170" /></a>
+                        <a href="https://old-sites.netlify.app/portfolio/edp/index.html" target="_blank">
+                            <div class="hide"><strong>E D P</strong><br />
+                                -Website Design <br />
+                                -Web Development <br />
+                                -Client Management <br />
+                            </div>
+                        </a>
+                    </li>
+                </ul>    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

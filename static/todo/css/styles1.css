@@ -1,0 +1,192 @@
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Oswald', 'Futura', sans-serif;
+}
+
+#wrapper {
+	margin-top: 2% !important;
+}
+
+#content {
+	padding: 15px;
+}
+
+#content>h2 {
+	font-size: 18px;
+	padding-top: 0;
+}
+
+a:hover {
+	text-decoration:none; color: black;
+}
+
+.pad20 {
+	padding: 0 20px 0 20px;
+}
+
+.items {
+	margin: 5px;
+	padding: 15px;
+	font-family: 'Kanit', sans-serif;
+	/* background: #80F2F6; */
+	vertical-align: middle;
+}
+
+.items:hover {
+	box-shadow: inset 0 0 0 10px #f6b28f;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.items-centered {
+	display: grid;
+	align-items: center;
+}
+
+.itemimg {
+	width: 100%;
+	/* or any custom size */
+	height: auto;
+	object-fit: none;
+	overflow: hidden;
+}
+
+/**
+.items2 { width:283px; height:198px; background:#676470;  }
+.items2:hover { box-shadow: inset 0 0 0 25px #53a7ea; transition:all 0.3s ease;  }
+**/
+
+
+
+.items-new {
+	background: rgb(180, 180, 189);
+	background: linear-gradient(165deg, rgb(255, 255, 255) 15%, rgb(195, 231, 240) 100%);
+	border: 3px solid  #f6b28f;
+	margin: 5px;
+	padding: 15px;
+	font-family: 'Kanit', sans-serif;
+	vertical-align: middle;
+}
+.nav-plain{
+	text-decoration: none;
+	color: black;
+}
+
+.clr{
+	background-color:#96daf8;	border: 3px solid #f6b28f; 
+}
+.clr1{
+	background: #c5ef00;
+	border: 1px solid black;
+}
+
+.clr2{
+	background: #84c7c3; border: 1px solid black;
+}
+
+.clr3{
+	background: #00efe7; border: 1px solid black;
+}
+
+.clr4{
+	background: #efc500; border: 1px solid black;
+}
+
+
+
+.navbar-default {
+	background-image: none;
+	background-repeat: no-repeat;
+}
+
+.navbar-row {
+	background-color: #96daf8;
+}
+
+.big {
+	/*	font-family: 'Kanit', sans-serif;
+	font-family: 'Righteous', cursive; */
+	font-family: 'Francois One', sans-serif;
+	font-size: 60px;
+}
+
+.hmpgtxt {
+	font-family: 'Cabin', sans-serif;
+	font-size: 50px;
+	text-align: center;
+}
+
+.hmpgtxt2 {
+	font-family: 'Kanit', sans-serif;
+	text-align: center;
+}
+
+.imgresponsive {
+	/* width: 100%; */
+	height: auto;
+}
+
+@media screen and (max-width: 550px) {
+
+	.imgresponsive {
+		width: 90%;
+		height: auto;
+	}
+}
+
+.mylogospan {
+	width: 250px;
+	background-color: red;
+}
+
+.p10 {
+	padding-bottom: 10px;
+}
+
+.t10 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.t20 {
+	margin-top: 30px;
+}
+
+.pad10 {
+	padding: 0 10px 0 10px;
+}
+
+.t30 {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.lastdate {
+	font-size: 13px;
+}
+
+#space {
+	margin-bottom: 10px;
+}
+
+.todo-completed {
+	text-decoration: line-through;
+	/*	background: rgba(149, 165, 166, .3); */
+}
+
+.rgt {
+	text-align: right;
+}
+
+#toggle{
+	border: 2px solid;
+}
+
+footer {
+	margin-top: 20px;
+	color: white;
+	font-weight: lighter;
+}
