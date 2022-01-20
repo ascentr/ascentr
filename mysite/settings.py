@@ -174,8 +174,8 @@ SOCIALACCOUNT_PROVIDERS = {
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST= 'smtp.gmail.com'
-EMAIL_HOST_USER= '786dev2020@gmail.com'
-EMAIL_HOST_PASSWORD= 'dj4ng05h1n32020'
+EMAIL_HOST_USER= email_address
+EMAIL_HOST_PASSWORD= email_password
 #EMAIL_USE_SSL = True
 #EMAIL_PORT = 465
 EMAIL_USE_TLS= True
